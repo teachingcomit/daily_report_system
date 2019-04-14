@@ -19,13 +19,11 @@ body {
 }
 
 h1 {
-
-
-width: 94%;
-    padding-top: 17px;
-    padding-left: 3%;
-    font-size: 24px;
-    color: #eeeeee;
+	width: 94%;
+	padding-top: 17px;
+	padding-left: 3%;
+	font-size: 24px;
+	color: #eeeeee;
 }
 
 h2 {
@@ -142,27 +140,35 @@ h1 a {
 }
 
 h1 {
-    font-size: 24px;
-    display: inline;
+	font-size: 24px;
+	display: inline;
 }
 
 table#report_list th {
-    font-weight: bold;
-    padding: 10px 2%;
+	font-weight: bold;
+	padding: 10px 2%;
 }
 
 table#report_list .report_name {
-    width: 20%;
-    padding: 10px 2%;
+	width: 20%;
+	padding: 10px 2%;
 }
+
 table#report_list .report_date {
-    width: 20%;
+	width: 20%;
 }
 
 table#report_list .report_title {
-    width: 37%;
+	width: 37%;
 }
 
 table#report_list .report_action {
-    width: 13%;
+	width: 13%;
+}
+
+pre {
+	white-space:pre-wrap;
+
+	font-family: "Hiragino Kaku Gothic Pro", Meiryo, "MS PGothic", Helvetica,
+		Arial, sans-serif;
 }
