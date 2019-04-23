@@ -23,6 +23,12 @@
 <br />
 <br />
 
+<label for="name">部署</label>
+<br />
+<input type ="text" name="department" value="${employee.department}" />
+<br />
+<br/>
+
 <label for="password">パスワード</label>
 <br />
 <input type="password" name="password" />
@@ -36,6 +42,9 @@
 		<c:if test="${employee.admin_flag == 0}"> selected</c:if>>一般</option>
 	<option value="1"
 		<c:if test="${employee.admin_flag == 1}"> selected</c:if>>管理者</option>
+    <option value = "2"
+         <c:if test="${employee.admin_flag == 2}"> selected</c:if>>部長</option>
+
 </select>
 <br />
 <br />

@@ -70,6 +70,10 @@ public class LoginFilter implements Filter {
                     return;
                 }
             }
+
+        if (servlet_path.matches("/employees.*") && e.getAdmin_flag() == 2{
+            (())
+        }
         }
 
         chain.doFilter(request, response);
