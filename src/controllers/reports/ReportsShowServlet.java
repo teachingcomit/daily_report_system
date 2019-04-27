@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import models.Employee;
 import models.Report;
 import utils.DBUtil;
 
@@ -38,6 +39,22 @@ public class ReportsShowServlet extends HttpServlet {
         Report r = em.find(Report.class, Integer.parseInt(request.getParameter("id")));
 
         em.close();
+
+        Employee loginUser = (Employee) request.getSession().getAttribute("");
+
+        Employee reportUser = em.find(Employee.class, Integer.parseInt(request.getParameter("id")));
+
+        boolean editable = false;
+
+        if (loginUser.getId().equals(r.getId())) {
+            editable = true;
+        }
+
+        if (loginUser.getAdmin_flag() == 2) {
+            if (loginUser.getDepartment().equals(reportUser.getDepartment())) {
+                editable = true;
+            }
+        }
 
         request.setAttribute("report", r);
         request.setAttribute("_token", request.getSession().getId());
