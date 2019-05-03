@@ -38,11 +38,11 @@ public class ReportsShowServlet extends HttpServlet {
 
         Report r = em.find(Report.class, Integer.parseInt(request.getParameter("id")));
 
-        em.close();
+        EntityManager em2 = DBUtil.createEntityManager();
 
         Employee loginUser = (Employee) request.getSession().getAttribute("");
 
-        Employee reportUser = em.find(Employee.class, Integer.parseInt(request.getParameter("id")));
+        Employee reportUser = em2.find(Employee.class, Integer.parseInt(request.getParameter("id")));
 
         boolean editable = false;
 
@@ -61,6 +61,9 @@ public class ReportsShowServlet extends HttpServlet {
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/reports/show.jsp");
         rd.forward(request, response);
+
+        em.close();
+        em2.close();
     }
 
 }
