@@ -39,10 +39,13 @@
 							<td><fmt:formatDate value="${report.updated_at}"
 									pattern="yyyy-MM-dd HH:mm:ss" /></td>
 						</tr>
+					    <tr>
+					        <th>いいね</th>
+					        <td>${nice_count}</td>
 					</tbody>
 				</table>
 
-                <div>${nice_count}</div>
+    
 
 				<c:if test="${sessionScope.login_employee.id == report.employee.id}">
 					<p>
